@@ -1,12 +1,15 @@
 import { ComponentType }              from '@angular/cdk/overlay';
 import { Injectable }                 from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { Subject }                    from 'rxjs';
 import { DialogConfig }               from './dialog-config';
 
 @Injectable({
     providedIn: 'root'
 })
 export class DialogService {
+
+    public scroll$: Subject<number> = new Subject();
 
     private instances: Array<DialogConfig> = [];
 

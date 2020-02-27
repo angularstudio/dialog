@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
-import { DialogService }                                             from './dialog.service';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild, ViewEncapsulation } from '@angular/core';
+import { DialogService }                                                                    from './dialog.service';
 
 @Component({
 
@@ -23,7 +23,7 @@ import { DialogService }                                             from './dia
 
             </div>
 
-            <div class="content" [style.background]="dialogService.getInstance(id).contentBackgroundColor">
+            <div #content class="content" [style.background]="dialogService.getInstance(id).contentBackgroundColor">
 
                 <ng-content></ng-content>
 
@@ -85,6 +85,8 @@ import { DialogService }                                             from './dia
 })
 export class DialogComponent {
 
+    @ViewChild('content') private contentContainer: ElementRef;
+
     @Output() public nextClick = new EventEmitter();
     @Output() public backClick = new EventEmitter();
     @Output() public deleteClick = new EventEmitter();
@@ -100,6 +102,20 @@ export class DialogComponent {
     @Input() public footerBackground: string = '#FEFFFE';
 
     public constructor(public dialogService: DialogService) {
+
+        dialogService.scroll$.subscribe(top => this.scrollTo(top));
+
+    }
+
+    public scrollTo(top?: number): void {
+
+        try {
+
+            this.contentContainer.nativeElement.scrollTop = top || this.contentContainer.nativeElement.scrollHeight;
+
+        } catch (err) {
+
+        }
 
     }
 

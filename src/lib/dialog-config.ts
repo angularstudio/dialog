@@ -19,11 +19,11 @@ export class DialogConfig {
     public deleteLabel?: string = 'Delete';
     public deleteShow?: boolean;
 
-    public footerShow?: boolean;
+    public footerShow?: boolean = true;
     public footerBackgroundColor?: string = '#eee';
     public footerMessage?: string = '';
 
-    public headerShow?: boolean;
+    public headerShow?: boolean = true;
     public headerBackgroundColor?: string = '#eee';
 
     public nextBackgroundColor?: string = 'rebeccapurple';

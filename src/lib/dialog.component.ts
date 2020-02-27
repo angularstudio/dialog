@@ -3,7 +3,7 @@ import { DialogService }                                             from './dia
 
 @Component({
 
-    selector: 'studio-dialog',
+    selector: 'dialogs',
 
     template: `
 

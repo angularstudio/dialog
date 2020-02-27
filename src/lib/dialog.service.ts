@@ -65,4 +65,10 @@ export class DialogService {
 
     }
 
+    public scrollTo(top?: number): void {
+
+        this.scroll$.next(top);
+
+    }
+
 }

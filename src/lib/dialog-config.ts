@@ -5,6 +5,7 @@ export class DialogConfig {
     public dialogRef?: MatDialogRef<any>;
     public id: string;
     public title?: string;
+    public titleIconClass?: string;
 
     public width?: string;
     public height?: string;

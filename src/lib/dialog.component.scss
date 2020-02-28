@@ -24,6 +24,9 @@ mat-dialog-container {
 
         .title {
 
+            display: flex;
+            align-items: center;
+
             flex: 1;
             color: #78909B;
 

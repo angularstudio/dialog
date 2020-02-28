@@ -13,7 +13,14 @@ import { DialogService }                                                        
                  class="header"
                  [style.background]="dialogService.getInstance(id).headerBackgroundColor">
 
-                <div class="title">{{ dialogService.getInstance(id).title }}</div>
+                <div class="title">
+
+                    <i *ngIf="dialogService.getInstance(id).titleIconClass"
+                       [class]="dialogService.getInstance(id).titleIconClass"></i>
+
+                    {{ dialogService.getInstance(id).title }}
+
+                </div>
 
                 <div class="buttons">
 

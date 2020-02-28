@@ -6,6 +6,8 @@ export class DialogConfig {
     public id: string;
     public title?: string;
     public titleIconClass?: string;
+    public titleIconColor?: string;
+    public titleIconFontSize?: string;
 
     public width?: string;
     public height?: string;

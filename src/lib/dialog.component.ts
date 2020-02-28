@@ -16,6 +16,8 @@ import { DialogService }                                                        
                 <div class="title">
 
                     <i *ngIf="dialogService.getInstance(id).titleIconClass"
+                       [style.font-size]="dialogService.getInstance(id).titleIconFontSize"
+                       [style.color]="dialogService.getInstance(id).titleIconColor"
                        [class]="dialogService.getInstance(id).titleIconClass"></i>
 
                     {{ dialogService.getInstance(id).title }}
